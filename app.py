@@ -3,7 +3,6 @@ import telebot
 import requests
 from bs4 import BeautifulSoup
 
-from flask import Flask
 
 bot = telebot.TeleBot('278758102:AAENnsnUdlaLTklqCaoj0F8hSckxoR-_t10')
 
@@ -55,16 +54,7 @@ def parser(message):
             answer += '+'
     return answer
 
-
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return 'OK!'
-
-
 if __name__ == '__main__':
-    app.run()
     bot.polling(none_stop=True)
 
 
